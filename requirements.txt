@@ -1,4 +1,3 @@
-streamlit
 youtube-transcript-api
 langchain
 openai
