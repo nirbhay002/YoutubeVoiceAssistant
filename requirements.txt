@@ -6,3 +6,4 @@ SpeechRecognition
 gTTS
 pyaudio
 langchain-google-genai
+langchain-community
