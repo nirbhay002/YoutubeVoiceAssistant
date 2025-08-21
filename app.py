@@ -190,11 +190,22 @@ if st.session_state.qa_chain:
     # --- CHAT INPUT AREA ---
     prompt = None
     
-    # Create columns to position the voice button to the right
-    col1, col2 = st.columns([0.85, 0.15])
-    with col2:
-        if st.button("Ask with Voice 🎤"):
-            prompt = get_speech_input()
+    # --- FIXED: Conditionally show voice input based on microphone availability ---
+    mic_available = True
+    try:
+        # A quick check to see if a microphone is present
+        with sr.Microphone() as source:
+            pass
+    except OSError:
+        mic_available = False
+
+    if mic_available:
+        col1, col2 = st.columns([0.85, 0.15])
+        with col2:
+            if st.button("Ask with Voice 🎤"):
+                prompt = get_speech_input()
+    else:
+        st.info("🎤 Voice input is not available in this environment.")
 
     # Get text input from the user
     text_prompt = st.chat_input("Ask a question about the video...")
