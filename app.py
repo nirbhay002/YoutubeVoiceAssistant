@@ -4,7 +4,7 @@ import nest_asyncio
 nest_asyncio.apply()
 # ---------------------------------------------
 from youtube_transcript_api import YouTubeTranscriptApi
-from langchain.text_splitter import RecursiveCharacterTextSplitter
+from langchain_text_splitters import RecursiveCharacterTextSplitter
 # --- Imports for Google Generative AI ---
 from langchain_google_genai import GoogleGenerativeAIEmbeddings, ChatGoogleGenerativeAI
 from langchain_community.vectorstores import FAISS
