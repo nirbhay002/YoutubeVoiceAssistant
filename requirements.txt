@@ -7,4 +7,7 @@ gTTS
 pyaudio
 langchain-google-genai
 langchain-community
+langchain-text-splitters
 nest-asyncio
+tavily-python  # For web search tool
+langchainhub     # To pull agent prompts
