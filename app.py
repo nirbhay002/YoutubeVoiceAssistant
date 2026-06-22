@@ -62,7 +62,7 @@ def create_vector_store(text):
         text_splitter = RecursiveCharacterTextSplitter(chunk_size=1000, chunk_overlap=100)
         chunks = text_splitter.split_text(text)
         
-        embeddings = GoogleGenerativeAIEmbeddings(model="models/text-embedding-004")
+        embeddings = GoogleGenerativeAIEmbeddings(model="gemini-embedding-001")
         vector_store = FAISS.from_texts(chunks, embedding=embeddings)
         return vector_store
     except Exception as e:
